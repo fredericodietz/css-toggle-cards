@@ -1,0 +1,218 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.card {
+  float: left;
+  width: 50%;
+  position: relative;
+  min-height: 400px;
+  background-poistion: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-1 {
+  background-image: url("http://lorempixel.com/400/400/city/");
+}
+
+.card-2 {
+  background-image: url("http://lorempixel.com/400/400/nature/");
+}
+
+.card__hidden {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 45px 50px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 400ms;
+          transition: all 400ms;
+}
+
+.card__list {
+  padding: 0;
+  margin: 92px 0 45px;
+}
+
+.card__list-item {
+  position: relative;
+  opacity: 0;
+  list-style-type: none;
+  color: #fff;
+  padding: 10px 0;
+}
+.card__list-item:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  -webkit-transition: width 200ms;
+          transition: width 200ms;
+}
+.card__list-item:after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: 0;
+  display: block;
+  width: 19px;
+  height: 14px;
+  background: url('/images/check.png');
+}
+
+.card__title {
+  position: relative;
+  display: inline-block;
+  top: 150px;
+  left: 150px;
+  -webkit-transition: all 400ms;
+          transition: all 400ms;
+  z-index: 5;
+  will-change: transform;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: normal;
+  line-height: 1;
+}
+.card__title span {
+  font-size: 70px;
+}
+
+.handwrite {
+  font-family: 'Allura', cursive;
+}
+
+.btn {
+  position: relative;
+  opacity: 0;
+  z-index: 15;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: lighter;
+  line-height: 1;
+  border: solid 1px;
+  border-radius: 2px;
+  padding: 15px 60px;
+  -webkit-transition: opacity 400ms 2000ms;
+          transition: opacity 400ms 2000ms;
+}
+.btn:hover {
+  background: #fff;
+  color: #577397;
+  border-color: #fff;
+}
+
+.card__select {
+  display: none;
+}
+.card__select:checked ~ .card__label {
+  cursor: auto;
+}
+.card__select:checked ~ .card__title {
+  font-size: 50px;
+  -webkit-transform: translate3d(-150px, -180px, 0) scale(0.5);
+          transform: translate3d(-150px, -180px, 0) scale(0.5);
+}
+.card__select:checked ~ .card__title span:after {
+  opacity: 0;
+}
+.card__select:checked ~ .card__hidden {
+  opacity: 1;
+  visibility: visible;
+}
+.card__select:checked ~ .card__hidden li {
+  opacity: 1;
+  -webkit-transition: opacity 300ms;
+          transition: opacity 300ms;
+}
+.card__select:checked ~ .card__hidden li:before {
+  width: 100%;
+}
+.card__select:checked ~ .card__hidden li:nth-child(1) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.card__select:checked ~ .card__hidden li:nth-child(1):before {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.card__select:checked ~ .card__hidden li:nth-child(2) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.card__select:checked ~ .card__hidden li:nth-child(2):before {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.card__select:checked ~ .card__hidden li:nth-child(3) {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.card__select:checked ~ .card__hidden li:nth-child(3):before {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.card__select:checked ~ .card__hidden .btn {
+  opacity: 1;
+}
+
+.card__label {
+  display: block;
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  cursor: pointer;
+}
+
+.card__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  display: block;
+  margin: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: solid 1px #fff;
+  border-radius: 50%;
+}
+.card__close:before, .card__close:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  display: inline-block;
+  top: 18px;
+  left: 4px;
+}
+.card__close:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.card__close:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
